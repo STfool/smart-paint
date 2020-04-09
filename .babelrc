@@ -1,0 +1,11 @@
+{
+	"presets": [
+		["env", {
+			"useBuiltIns": "usage",
+			"corejs": {
+				"version": 3
+			}
+		}],
+		["react"]
+	]
+}
