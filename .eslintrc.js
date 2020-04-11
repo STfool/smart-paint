@@ -23,6 +23,9 @@ module.exports = {
     'react',
   ],
   rules: {
-		"linebreak-style": 0
+		"no-console": 0,
+		"linebreak-style": 0,
+		"import/no-extraneous-dependencies": ["error",  {"devDependencies": true}],
+		"import/newline-after-import": 0
   },
 };
