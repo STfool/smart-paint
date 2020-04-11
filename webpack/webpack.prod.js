@@ -5,6 +5,7 @@ const baseconfig = require('./webpack.base');
 
 module.exports = merge(baseconfig, {
   mode: 'production',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -24,6 +25,12 @@ module.exports = merge(baseconfig, {
       {
         test: /\.less$/,
         use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: true,
+            },
+          },
           {
             loader: 'css-loader',
           },

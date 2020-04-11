@@ -51,11 +51,13 @@ module.exports = {
           },
           {
             loader: 'svgo-loader',
-            plugins: [
-              { removeTitle: true },
-              { convertColors: { shorthex: false } },
-              { convertPathData: false },
-            ],
+            options: {
+              plugins: [
+                { removeTitle: true },
+                { convertColors: { shorthex: false } },
+                { convertPathData: false },
+              ],
+            },
           },
         ],
       },

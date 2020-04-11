@@ -6,6 +6,7 @@ module.exports = merge(baseconfig, {
   devServer: {
     port: 3000,
   },
+  devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [
       {
@@ -38,6 +39,4 @@ module.exports = merge(baseconfig, {
       },
     ],
   },
-  plugins: [
-  ],
 });
