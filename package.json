@@ -5,14 +5,16 @@
   "repository": {
     "type": "github",
     "url": "https://github.com/STfool/smart-paint"
-  },
+	},
+	"main": "app/main",
   "description": "awesome instant painting application running in any platform",
-  "main": "app/main",
   "scripts": {
-    "start": "node scripts/start",
-    "build": "node scripts/build",
-    "deploy": "node scripts/deploy",
-    "test": "node scripts/test"
+    "dev": "webpack-dev-server --config webpack/webpack.dev.js",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "deploy": "npm run build && deploy.sh",
+		"test": "webpack --config webpack/webpack.test.js",
+		"electron": "electron .",
+    "start": "concurrently \" npm run dev \" \"wait-on http://localhost:3000/ && npm run electron\""
   },
   "keywords": [
     "electron",
@@ -27,6 +29,7 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "chalk": "^4.0.0",
+    "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^5.1.0",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.1",
