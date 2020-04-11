@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: '[name][hash:8].bundle.js',
     path: resolve('.build'),
-    chunkFilename: '[id].js',
+    chunkFilename: 'js/[id].js',
     publicPath: '/.build/',
   },
   resolve: {
@@ -26,24 +26,36 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
+        test: /\.(png|jpe?g|gif|webp)$/,
+        exclude: resolve('react/assets/svg'),
         use: [
           {
-            loader: 'css-loader',
+            loader: 'file-loader',
+            options: {
+              name: '[name][contenthash:8].[ext]',
+              output: 'assets/img',
+            },
           },
         ],
       },
       {
-        test: /\.less$/,
+        test: /\.(svg)$/,
+        include: resolve('react/assets/svg'),
         use: [
           {
-            loader: 'css-loader',
+            loader: 'file-loader',
+            options: {
+              name: '[name][contenthash:8].[ext]',
+              output: 'assets/svg',
+            },
           },
           {
-            loader: 'less-loader',
-          },
-          {
-            loader: 'postcss-loader',
+            loader: 'svgo-loader',
+            plugins: [
+              { removeTitle: true },
+              { convertColors: { shorthex: false } },
+              { convertPathData: false },
+            ],
           },
         ],
       },
