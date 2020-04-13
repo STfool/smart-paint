@@ -17,8 +17,9 @@ module.exports = {
       jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: 'module',
-  },
+		sourceType: 'module',
+	},
+	parser: 'babel-eslint',
   plugins: [
     'react',
   ],
