@@ -10,7 +10,9 @@ module.exports = {
   ],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+		SharedArrayBuffer: 'readonly',
+		window: true,
+		document: true,
   },
   parserOptions: {
     ecmaFeatures: {
@@ -28,5 +30,12 @@ module.exports = {
 		"linebreak-style": 0,
 		"import/no-extraneous-dependencies": ["error",  {"devDependencies": true}],
 		"import/newline-after-import": 0
-  },
+	},
+	settings: {
+		'import/resolver': {
+			webpack: {
+				config: './webpack/webpack.base.js'
+			}
+		}
+	}
 };

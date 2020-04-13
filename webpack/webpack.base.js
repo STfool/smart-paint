@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { resolve } = require('./utils');
+const { resolve } = require('./common');
 
 module.exports = {
   entry: [resolve('react/index.jsx')],
@@ -12,11 +12,12 @@ module.exports = {
   resolve: {
     extensions: ['.jsx', '.js'],
     alias: {
-      app: resolve('app'),
-      reactapp: resolve('react'),
-      img: resolve('react/assets/img'),
-      svg: resolve('react/assets/svg'),
-      styles: resolve('react/styles'),
+      $app: resolve('app'),
+      $reactapp: resolve('react'),
+      $components: resolve('react/components'),
+      $img: resolve('react/assets/img'),
+      $svg: resolve('react/assets/svg'),
+      $styles: resolve('react/styles'),
     },
   },
   module: {
