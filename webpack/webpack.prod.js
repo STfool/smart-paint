@@ -32,7 +32,10 @@ module.exports = merge(baseconfig, {
             },
           },
           {
-            loader: 'css-loader',
+						loader: 'css-loader',
+						options: {
+							importLoaders: 2
+						}
           },
           {
             loader: 'postcss-loader',

@@ -1,14 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SvgIcon = ({ svgPath }) => (<div>{svgPath}</div>);
+import './svg-icon.less';
+
+const SvgIcon = ({ name }) => {
+  let svgName;
+  try {
+    svgName = require(`@svg/${name}.svg`);
+  } catch (e) {
+    throw new Error('error: svg图片地址出错');
+  }
+
+  const checkMark = () => ({
+    __html: svgName,
+  });
+  return (
+    <div className="svg-icon" dangerouslySetInnerHTML={checkMark()} />
+  );
+};
 
 SvgIcon.propTypes = {
-  svgPath: PropTypes.string,
+  name: PropTypes.string,
 };
 
 SvgIcon.defaultProps = {
-  svgPath: '.',
+  name: 'star-bg',
 };
 
 export default SvgIcon;

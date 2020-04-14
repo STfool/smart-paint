@@ -1,10 +1,10 @@
 import React from 'react';
+import { SvgIcon } from '@components';
 
 function App() {
   return (
     <div>
-      <p>Hello world</p>
-      <p>Stay hungry, stay foolish</p>
+      <SvgIcon />
     </div>
   );
 }

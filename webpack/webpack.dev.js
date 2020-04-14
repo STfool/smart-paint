@@ -16,7 +16,7 @@ module.exports = merge(baseconfig, {
             loader: 'style-loader',
           },
           {
-            loader: 'css-loader',
+						loader: 'css-loader'
           },
         ],
       },
@@ -27,7 +27,10 @@ module.exports = merge(baseconfig, {
             loader: 'style-loader',
           },
           {
-            loader: 'css-loader',
+						loader: 'css-loader',
+						options: {
+							importLoaders: 2
+						}
           },
           {
             loader: 'postcss-loader',

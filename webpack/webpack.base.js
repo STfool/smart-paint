@@ -12,12 +12,12 @@ module.exports = {
   resolve: {
     extensions: ['.jsx', '.js'],
     alias: {
-      $app: resolve('app'),
-      $reactapp: resolve('react'),
-      $components: resolve('react/components'),
-      $img: resolve('react/assets/img'),
-      $svg: resolve('react/assets/svg'),
-      $styles: resolve('react/styles'),
+      "@app": resolve('app'),
+      '@reactapp': resolve('react'),
+      '@components': resolve('react/components'),
+      '@img': resolve('react/assets/img'),
+      '@svg': resolve('react/assets/svg'),
+      '@styles': resolve('react/styles'),
     },
   },
   module: {
@@ -40,15 +40,14 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg)$/,
+        test: /\.svg$/,
         include: resolve('react/assets/svg'),
         use: [
           {
-            loader: 'file-loader',
-            options: {
-              name: '[name][contenthash:8].[ext]',
-              output: 'assets/svg',
-            },
+						loader: 'raw-loader',
+						options: {
+							esModule: false
+						}
           },
           {
             loader: 'svgo-loader',
