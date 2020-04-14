@@ -4,7 +4,9 @@ import App from './app';
 
 import 'normalize.css';
 
+const root = document.createElement('div');
+root.setAttribute('id', 'root');
 ReactDom.render(
   <App />,
-  document.body.appendChild(document.createElement('div')),
+  document.body.appendChild(root),
 );
