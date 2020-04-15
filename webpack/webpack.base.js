@@ -27,7 +27,7 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.(png|jpe?g|gif|webp)$/,
+        test: /\.(png|jpe?g|gif|webp|svg)$/,
         exclude: resolve('react/assets/svg'),
         use: [
           {

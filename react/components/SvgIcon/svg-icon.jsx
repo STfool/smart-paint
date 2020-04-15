@@ -24,7 +24,7 @@ SvgIcon.propTypes = {
 };
 
 SvgIcon.defaultProps = {
-  name: 'star-bg',
+  name: '',
 };
 
 export default SvgIcon;

@@ -1,11 +1,10 @@
 import React from 'react';
-import { SvgIcon } from '@components';
 import './app.less';
 
 function App() {
   return (
     <div className="homepage">
-      <SvgIcon />
+      1
     </div>
   );
 }
