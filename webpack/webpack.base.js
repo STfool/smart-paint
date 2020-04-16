@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const isDev = process.env.NODE_ENV === 'development'
 const { resolve } = require('./common');
 
 module.exports = {
@@ -24,7 +26,8 @@ module.exports = {
     rules: [
       {
         test: /\.js(x)?$/,
-        loader: 'babel-loader',
+				loader: 'babel-loader',
+				exclude: /node_modules/,
       },
       {
         test: /\.(png|jpe?g|gif|webp|svg)$/,
@@ -34,7 +37,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name][contenthash:8].[ext]',
-              output: 'assets/img',
+              outputPath: 'assets/img',
             },
           },
         ],
@@ -60,13 +63,58 @@ module.exports = {
             },
           },
         ],
-      },
+			},
+			{
+				test: /\.css$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							esModule: true,
+							hmr: isDev
+						}
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							esModule: true
+						}
+					}
+				]
+			},
+			{
+				test: /\.less$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							esModule: true,
+							hmr: isDev
+						}
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							esModule: true,
+							importLoaders: 2
+						}
+					},
+					'postcss-loader',
+					'less-loader'
+				]
+			}
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: resolve('public/index.html'),
       filename: 'index.html',
-    }),
+		}),
+
+		new MiniCssExtractPlugin({
+			filename:  isDev ? 'css/[name].css' : 'css/[name][hash].css',
+			chunkFilename: isDev ? 'css/[id].css' : 'css/[id].[hash].css'
+		})
   ],
 };

@@ -8,38 +8,6 @@ module.exports = merge(baseconfig, {
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-						loader: 'css-loader'
-          },
-        ],
-      },
-      {
-        test: /\.less$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-						loader: 'css-loader',
-						options: {
-							importLoaders: 2
-						}
-          },
-          {
-            loader: 'postcss-loader',
-          },
-          {
-            loader: 'less-loader',
-          },
-        ],
-      },
-    ],
+    rules: [],
   },
 });
