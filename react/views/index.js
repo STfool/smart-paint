@@ -1,7 +1,2 @@
-import DashBoard from './Dashboard/dashborad';
-import Login from './Login/login';
-
-export default {
-  DashBoard,
-  Login,
-};
+export { default as DashBoard } from './Dashboard/dashborad';
+export { default as Login } from './Login/login';

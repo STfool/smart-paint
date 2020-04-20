@@ -1,10 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Login } from './views';
 import './app.less';
 
 function App() {
   return (
     <div className="homepage">
-      1
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={<Login />} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
