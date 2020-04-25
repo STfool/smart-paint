@@ -8,9 +8,9 @@ module.exports = {
   entry: [resolve('react/index.jsx')],
   output: {
     filename: '[name][hash:8].bundle.js',
-    path: resolve('.build'),
-    chunkFilename: 'js/[id].js',
-    publicPath: '/.build/',
+    path: resolve('build'),
+    chunkFilename: 'js/[id][chunkhash:8].chunk.js',
+    publicPath: '/build/',
   },
   resolve: {
     extensions: ['.jsx', '.js'],
