@@ -9,8 +9,9 @@
   "main": "app/main",
   "description": "awesome instant painting application running in any platform",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack/webpack.dev.js",
-    "build": "webpack --config webpack/webpack.prod.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/webpack.dev.js",
+		"build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
+		"build:dll": "cross-env NODE_ENV=production webpack --config webpack/webpack.dll.js",
     "deploy": "npm run build && deploy.sh",
     "test": "npm run build",
     "electron": "electron .",

@@ -6,7 +6,7 @@ import './svg-icon.less';
 const SvgIcon = ({ name }) => {
   let svgName;
   try {
-    svgName = require(`~@svg/${name}.svg`);
+    svgName = require(`@svg/${name}.svg`);
   } catch (e) {
     throw new Error('error: svg图片地址出错');
   }

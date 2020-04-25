@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isDev = process.env.NODE_ENV === 'development'
+const config = require('../public/config')[isDev ? 'dev': 'prod']
 const { resolve } = require('./common');
 
 module.exports = {
@@ -109,7 +110,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: resolve('public/index.html'),
-      filename: 'index.html',
+			filename: 'index.html',
+			config: config.template
 		}),
 
 		new MiniCssExtractPlugin({
