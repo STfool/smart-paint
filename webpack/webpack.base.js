@@ -5,10 +5,10 @@ const config = require('../public/config')[isDev ? 'dev': 'prod']
 const { resolve } = require('./common');
 
 module.exports = {
-  entry: [resolve('react/index.jsx')],
+  entry: [resolve('react', 'index.jsx')],
   output: {
-    filename: '[name][hash:8].bundle.js',
-    path: resolve('build'),
+		filename: '[name][hash:8].bundle.js',
+		path: resolve('.build'),
     chunkFilename: 'js/[id][chunkhash:8].chunk.js',
     publicPath: '/build/',
   },
@@ -22,7 +22,22 @@ module.exports = {
       '@svg': resolve('react/assets/svg'),
       '@styles': resolve('react/styles'),
     },
-  },
+	},
+	optimization: {
+		splitChunks: {  // 分割代码块
+			cacheGroups: {
+				common: {
+					chunks: 'initial',
+					name: 'common',
+					minSize: 100, // 大小超过100字节
+					minChunks: 3 // 最少引入3次
+				}
+			}
+		},
+		runtimeChunk: {
+			name: 'manifest'
+		}
+	},
   module: {
     rules: [
       {
