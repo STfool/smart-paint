@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 const config = require('../public/config')[isDev ? 'dev': 'prod']
 const { resolve } = require('./common');
+const { parse } = require('path')
 
 module.exports = {
   entry: [resolve('react', 'index.jsx')],
@@ -113,7 +114,16 @@ module.exports = {
 						loader: 'css-loader',
 						options: {
 							esModule: true,
-							importLoaders: 2
+							importLoaders: 2,
+							modules: {
+								mode: 'local',
+								getLocalIdent(context, localIdentName, localName, options) {
+									const _path = context._module.context
+									const _name = parse(context._module.resource).name
+
+
+								}
+							}
 						}
 					},
 					'postcss-loader',
