@@ -10,5 +10,5 @@ app.on('ready', () => {
     },
   });
 
-  win.loadURL('http://localhost:3000/.build/index.html');
+  win.loadURL('http://localhost:3000');
 });

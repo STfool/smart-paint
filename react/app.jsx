@@ -1,16 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {
+  HashRouter as Router, Switch, Redirect, Route,
+} from 'react-router-dom';
 import { Login } from './views';
 import './app.less';
 
 function App() {
   return (
     <div className="homepage">
-      <BrowserRouter>
+      <Router>
         <Switch>
+          <Route path="/" exact render={() => (<Redirect to="/login" />)} />
           <Route path="/login" exact component={Login} />
         </Switch>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
