@@ -3,11 +3,11 @@ import {
   HashRouter as Router, Switch, Redirect, Route,
 } from 'react-router-dom';
 import { Login } from './views';
-import './app.less';
+import app from './app.less';
 
 function App() {
   return (
-    <div className="homepage">
+    <div className={app.homepage}>
       <Router>
         <Switch>
           <Route path="/" exact render={() => (<Redirect to="/login" />)} />

@@ -1,12 +1,12 @@
 import React from 'react';
-
 import loginLess from './login.less';
-console.log(loginLess, '::-----------');
 
 const LoginForm = () => (
-  <div className={loginLess.foo}>
+  <form className={loginLess.foo}>
+    <input type="text" placeholder="请输入账号" />
+    <input type="text" placeholder="请输入密码" />
     <button type="button" className="main-btn">哈哈哈</button>
-  </div>
+  </form>
 );
 
 export default LoginForm;
