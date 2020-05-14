@@ -3,6 +3,7 @@ import {
   HashRouter as Router, Switch, Redirect, Route,
 } from 'react-router-dom';
 import { Login } from './views';
+import Wrap from './layout/wrap';
 import app from './app.less';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route path="/" exact render={() => (<Redirect to="/login" />)} />
           <Route path="/login" exact component={Login} />
+          <Route path="/app" component={Wrap} />
         </Switch>
       </Router>
     </div>

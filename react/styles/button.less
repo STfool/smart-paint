@@ -5,14 +5,35 @@
 
 :global(.main-btn) {
 	.button;
-	border-radius: 5px;
-	width: @m-btn-w;
-	height: @m-btn-h;
+	&:global(.default) {
+		border-radius: 5px;
+		width: 125px;
+		height: 25px;
+	}
+
+	&:global(.large) {
+		border-radius: 8px;
+		width: 200px;
+		height: 40px;
+	}
+
+	&:hover {
+		background-color: fadeout(@color-primary, 20%);
+	}
+
+	&:active {
+		opacity: 0.8;
+	}
+
+	&[class~=disabled] {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
 }
 
 :global(.small-btn) {
 	.button;
 	border-radius: 3px;
-	width: @s-btn-w;
-	height: @s-btn-h;
+	width: 80px;
+	height: 16px;
 }

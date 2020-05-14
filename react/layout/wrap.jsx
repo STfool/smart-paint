@@ -7,4 +7,4 @@ const wrap = () => {
   return (<div><oDiv /></div>);
 };
 
-return wrap;
+export default wrap;

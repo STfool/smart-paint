@@ -1,12 +1,20 @@
 import React from 'react';
+import { Input, Button } from '@components';
+
 import loginLess from './login.less';
 
-const LoginForm = () => (
-  <form className={loginLess.foo}>
-    <input type="text" placeholder="请输入账号" />
-    <input type="text" placeholder="请输入密码" />
-    <button type="button" className="main-btn">哈哈哈</button>
-  </form>
-);
+const LoginForm = () => {
+  const handleBtn = () => {
+    console.log(11);
+  };
+
+  return (
+    <form className={loginLess.foo}>
+      <Input type="text" placeholder="请输入账号" />
+      <Input type="text" placeholder="请输入密码" />
+      <Button size="large" onClick={handleBtn} />
+    </form>
+  );
+};
 
 export default LoginForm;
