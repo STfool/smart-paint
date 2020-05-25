@@ -6,7 +6,7 @@ const Button = ({
 }) => (<button type="button" onClick={onClick} className={`main-btn ${size} ${className}`}>{children}</button>);
 
 Button.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   size: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,

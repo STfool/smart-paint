@@ -1,0 +1,48 @@
+.formWrap {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	div {
+		width: 100%;
+		text-align: center;
+
+		&:first-child {
+			margin-top: 20px;
+		}
+	}
+
+	label {
+		> span {
+			display: inline-block;
+			width: 120px;
+			text-align: right;
+		}
+	}
+
+	input[type*=text] {
+		width: 50%;
+		padding: 5px;
+		height: 22px;
+		line-height: 12px;
+		border-radius: 5px;
+		outline: none;
+		border: 1px solid #ccc;
+		margin: 10px;
+
+		&:valid {
+			border: 1px solid #ccc;
+		}
+
+		&:invalid {
+			border: 1px solid #f40;		}
+	}
+
+	.btn {
+		margin-left: 120px;
+		width: 100%;
+	}
+}
