@@ -12,17 +12,17 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/webpack.dev.js",
 		"build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
 		"build:dll": "cross-env NODE_ENV=production webpack --config webpack/webpack.dll.js",
-    "deploy": "npm run build && deploy.sh",
-    "test": "npm run build",
-    "electron": "electron .",
-    "start": "concurrently \" npm run dev \" \"wait-on http://localhost:3000/ && npm run electron\""
+		"electron": "cross-env NODE_ENV=development electron .",
+		"electron:build": "cross-env NODE_ENV=production electron .",
+		"start": "concurrently \" npm run dev \" \"wait-on http://localhost:3000/ && npm run electron\"",
+    "deploy": "npm run build && deploy.sh"
   },
   "keywords": [
     "electron",
     "react.js",
     "react-hooks"
   ],
-  "author": "Tangjj1996",
+  "author": "Tangj",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",

@@ -3,18 +3,9 @@ const router = {
     {
       path: '',
       key: '',
+      component: '',
     },
   ],
-  login: {
-    path: '/login',
-    key: 'login',
-    component: 'Login',
-  },
-  notFound: {
-    path: '/404',
-    key: 'notfound',
-    component: 'NotFound',
-  },
 };
 
 export default router;

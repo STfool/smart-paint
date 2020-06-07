@@ -28,7 +28,7 @@ module.exports = {
   rules: {
 		"no-console": 0,
 		"linebreak-style": 0,
-		"import/no-extraneous-dependencies": ["error",  {"devDependencies": true}],
+		"import/no-extraneous-dependencies": 0,
 		"import/newline-after-import": 0,
 		"react/no-danger": 0,
 		"global-require": 0,

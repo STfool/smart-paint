@@ -8,7 +8,7 @@ const Form = ({ handleBtn }) => (
     <div>
       <label htmlFor="username-login">
         <span>姓名：</span>
-        <input id="username-login" placeholder="请输入用户名/邮箱" type="text" pattern="1[^2]{8}" />
+        <input id="username-login" placeholder="请输入用户名/邮箱" type="text" required />
       </label>
     </div>
     <div>
