@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>smart paint</title>
 </head>
+
 <body>
 	<% if(htmlWebpackPlugin.options.config.env === 'production') { %>
-		<script src="dll/react.dll.8423d7"></script>
+	<script src="dll/react.dll.8423d7"></script>
 	<% } %>
+	<script>
+		document.oncontextmenu = function () {
+			return false;
+		};
+	</script>
 </body>
+
 </html>
