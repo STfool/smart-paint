@@ -4,11 +4,10 @@ import {
 } from 'react-router-dom';
 import { Login } from './views';
 import Wrap from './layout/wrap';
-import app from './app.less';
 
 function App() {
   return (
-    <div className={app.homepage}>
+    <div className="homepage">
       <Router>
         <Switch>
           <Route path="/" exact render={() => (<Redirect to="/login" />)} />

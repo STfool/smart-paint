@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './svg-icon.less';
+import styleName from './svg-icon.module.less';
 
 const SvgIcon = ({ name }) => {
   let svgName;
@@ -15,7 +15,7 @@ const SvgIcon = ({ name }) => {
     __html: svgName,
   });
   return (
-    <div className="svg-icon" dangerouslySetInnerHTML={checkMark()} />
+    <div className={styleName['svg-icon']} dangerouslySetInnerHTML={checkMark()} />
   );
 };
 

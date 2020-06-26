@@ -114,9 +114,7 @@ module.exports = {
 						options: {
 							esModule: true,
 							importLoaders: 2,
-							modules: {
-								mode: 'local'
-							}
+							modules: { auto: true }
 						}
 					},
 					'postcss-loader',

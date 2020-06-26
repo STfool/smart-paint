@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form } from '@components';
-import './login.less';
 
 const LoginForm = () => {
   const handleBtn = () => {
