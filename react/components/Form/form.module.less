@@ -1,18 +1,20 @@
 .formWrap {
-	width: 80%;
-	margin: 0 auto;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 350px;
+	height: 500px;
+	box-shadow: 2px 2px 5px 2px #ccc;
+	border-radius: 5px;
 
 	div {
 		width: 100%;
 		text-align: center;
-
-		&:first-child {
-			margin-top: 20px;
-		}
 	}
 
 	label {
@@ -40,10 +42,5 @@
 		&:invalid {
 			border: 1px solid #f40;
 		}
-	}
-
-	.btn {
-		margin-left: 120px;
-		width: 100%;
 	}
 }

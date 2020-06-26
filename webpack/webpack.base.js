@@ -113,12 +113,17 @@ module.exports = {
 						loader: 'css-loader',
 						options: {
 							esModule: true,
+							import: true,
 							importLoaders: 2,
 							modules: { auto: true }
 						}
 					},
 					'postcss-loader',
-					'less-loader'
+					{
+						loader: 'less-loader',
+						options: {
+						}
+					}
 				]
 			}
     ],
