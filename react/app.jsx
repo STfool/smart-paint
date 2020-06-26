@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  HashRouter as Router, Switch, Redirect, Route,
+  BrowserRouter as Router, Switch, Redirect, Route,
 } from 'react-router-dom';
 import { Login } from './views';
 import Wrap from './layout/wrap';
