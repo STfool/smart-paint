@@ -1,17 +1,32 @@
 {
   "name": "smart-paint",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app/index.ts",
   "repository": "git@github.com:STfool/smart-paint.git",
   "author": "Tangjj1996 <tangjj_1996@163.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.9",
-    "@babel/preset-typescript": "^7.14.5"
+    "@babel/preset-typescript": "^7.14.5",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "electron": "^13.1.7",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "prettier": "^2.3.2",
+    "webpack": "^5.48.0"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.14.9"
+    "@babel/runtime-corejs3": "^7.14.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
