@@ -1,10 +1,13 @@
 import { webpack } from "webpack";
 import baseOptions from "./base.config";
 import { merge } from "webpack-merge";
+import * as path from "path";
 
 const prodOptions = merge(baseOptions, {
   mode: "production",
+  devtool: "none",
   output: {
+    path: path.resolve(__dirname, "../build"),
     filename: "[name].[chunkhash:8].js",
     chunkFilename: "[id].[chunkhash:8].js",
   },

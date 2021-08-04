@@ -13,6 +13,9 @@ const dllOptions: Configuration = {
   },
   plugins: [
     new DllPlugin({
+      context: __dirname,
+      name: "vendor",
+      format: true,
       path: path.resolve(__dirname, "../build/vendor-manifest.json"),
     }),
   ],
