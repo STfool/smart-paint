@@ -2,8 +2,6 @@ import { webpack } from "webpack";
 import baseOptions from "./base.config";
 import { merge } from "webpack-merge";
 
-process.env.NODE_ENV = "production";
-
 const prodOptions = merge(baseOptions, {
   mode: "production",
   output: {

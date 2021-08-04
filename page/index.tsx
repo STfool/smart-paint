@@ -1,9 +1,16 @@
 import * as React from "react";
-import * as ReactDom from "react-dom";
+import * as ReactDOM from "react-dom";
 import App from "./app";
 
 const root = document.createElement("div");
-ReactDom.render(<App></App>, root);
+document.body.appendChild(root);
+ReactDOM.render(<App />, root);
 
-if (import.meta) {
+if (module.hot) {
+    module.hot.accept("./app", () => {
+        import("./app").then((res) => {
+            const App = res.default;
+            ReactDOM.render(<App />, root);
+        });
+    });
 }

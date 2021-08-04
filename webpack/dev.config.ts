@@ -7,9 +7,7 @@ import baseOptions from "./base.config";
 import { merge } from "webpack-merge";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import WebpackDevServer from "webpack-dev-server";
-import path from "path";
-
-process.env.NODE_ENV = "development";
+import * as path from "path";
 
 const devOptions = merge(baseOptions, {
   mode: "development",
@@ -19,7 +17,7 @@ const devOptions = merge(baseOptions, {
   },
   plugins: [
     new DllReferencePlugin({
-      manifest: path.resolve(__dirname, "../static/vendor-manifest.json"),
+      manifest: path.resolve(__dirname, "../build/vendor-manifest.json"),
     }),
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
@@ -38,15 +36,12 @@ const devOptions = merge(baseOptions, {
   ],
 });
 
-const complier = webpack(devOptions, (err, stats) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log(stats.toString());
-});
+const complier = webpack(devOptions);
 
-const server = new WebpackDevServer(complier, {});
+const server = new WebpackDevServer(complier, {
+  hot: true,
+  contentBase: "../build",
+});
 
 server.listen(8080, (err) => {
   console.error("[webpack-dev-server]:: There are something wrong", err);

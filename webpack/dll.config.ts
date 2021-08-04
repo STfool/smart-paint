@@ -2,17 +2,18 @@ import { webpack, Configuration, DllPlugin } from "webpack";
 import * as path from "path";
 
 const dllOptions: Configuration = {
+  mode: "none",
   entry: {
-    webStatic: ["react", "react-dom"],
+    vendor: ["react", "react-dom"],
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "../static"),
+    path: path.resolve(__dirname, "../build"),
     library: "vendor",
   },
   plugins: [
     new DllPlugin({
-      path: path.resolve(__dirname, "static/vendor-manifest.json"),
+      path: path.resolve(__dirname, "../build/vendor-manifest.json"),
     }),
   ],
 };
