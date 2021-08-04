@@ -3,7 +3,10 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "jsx": "react-jsx",
-    "noEmit": true
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["../node_modules/*"]
+    }
   }
 }
