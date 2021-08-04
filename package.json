@@ -6,13 +6,13 @@
   "author": "Tangjj1996 <tangjj_1996@163.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "yarn dev && tsc -p app && electron build/index.js",
-    "start:build": "yarn build && tsc -p app && electron build/index.js",
+    "start": "babel app --extensions .ts --config-file ./app/.babelrc -d build --verbose && electron build/index.js",
     "dev": "ts-node webpack/dev.config.ts",
     "build": "ts-node webpack/prod.config.ts",
     "dll": "ts-node webpack/dll.config.ts"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
     "@babel/core": "^7.14.8",
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.9",
