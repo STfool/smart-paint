@@ -3,6 +3,5 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node"
-  },
-  "include": ["app"]
+  }
 }
