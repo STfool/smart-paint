@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, globalShortcut, webContents } from "electron";
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -6,11 +6,12 @@ function createWindow() {
     height: 900,
   });
 
-  win.webContents.openDevTools();
-
   win.loadURL("http://localhost:8080");
 }
 
 app.whenReady().then(() => {
+  globalShortcut.register("ctrl+l", () => {
+    webContents.getFocusedWebContents()?.openDevTools();
+  });
   createWindow();
 });
