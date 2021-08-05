@@ -11,6 +11,6 @@ function createWindow() {
   win.loadURL("http://localhost:8080");
 }
 
-await app.whenReady();
-
-createWindow();
+app.whenReady().then(() => {
+  createWindow();
+});
