@@ -11,6 +11,5 @@ function createWindow() {
   win.loadURL("http://localhost:8080");
 }
 
-_electron.app.whenReady().then(function () {
-  createWindow();
-});
+await _electron.app.whenReady();
+createWindow();
