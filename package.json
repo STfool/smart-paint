@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "build/index.js",
   "repository": "git@github.com:STfool/smart-paint.git",
+  "description": "efficient paint tool",
   "author": "Tangjj1996 <tangjj_1996@163.com>",
   "license": "MIT",
   "scripts": {
     "start": "babel main --extensions .ts --config-file ./main/.babelrc -d build --verbose && electron build/index.js",
     "dev": "ts-node webpack/dev.config.ts",
     "build": "ts-node webpack/prod.config.ts",
-    "dll": "ts-node webpack/dll.config.ts"
+    "dll": "ts-node webpack/dll.config.ts",
+    "postinstall": "electron-builder install-app-deps",
+    "package": "electron-builder --config electron-builder.yml"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
@@ -24,7 +27,8 @@
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "babel-loader": "^8.2.2",
-    "electron": "^13.1.7",
+    "electron": "^13.1.8",
+    "electron-builder": "^22.11.7",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
