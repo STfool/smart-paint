@@ -1,4 +1,10 @@
-import { webpack, Configuration, DllPlugin, DefinePlugin } from "webpack";
+import {
+  webpack,
+  Configuration,
+  DllPlugin,
+  DefinePlugin,
+  Compiler,
+} from "webpack";
 import * as path from "path";
 
 const dllOptions: Configuration = {
@@ -24,10 +30,12 @@ const dllOptions: Configuration = {
   ],
 };
 
-webpack(dllOptions, (err, stats) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log(stats.toString());
-});
+export default function dllRun(): Compiler {
+  return webpack(dllOptions, (err, stats) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    console.log(stats.toString());
+  });
+}

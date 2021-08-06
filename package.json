@@ -10,7 +10,6 @@
     "start": "babel main --extensions .ts --config-file ./main/.babelrc -d build --verbose && electron build/index.js",
     "dev": "cross-env NODE_ENV=development ts-node webpack/dev.ts",
     "prod": "cross-env NODE_ENV=production ts-node webpack/prod.ts",
-    "dll": "cross-env NODE_ENV=production ts-node webpack/dll.ts",
     "package": "electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
