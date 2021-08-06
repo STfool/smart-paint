@@ -3,9 +3,7 @@ productName: "tangjitest"
 copyright: "Copyright © year tangji"
 directories:
   output: "package"
-dmg:
-  window:
-    x: 400
-    y: 100
-    width: 540
-    height: 380
+mac:
+  target: "dmg"
+files:
+  - build/**/*

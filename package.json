@@ -11,8 +11,7 @@
     "dev": "ts-node webpack/dev.config.ts",
     "build": "ts-node webpack/prod.config.ts",
     "dll": "ts-node webpack/dll.config.ts",
-    "postinstall": "electron-builder install-app-deps",
-    "package": "electron-builder --config electron-builder.yml"
+    "package": "electron-builder"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
