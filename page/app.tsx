@@ -1,11 +1,8 @@
 import * as React from "react";
 
+console.log(process.env.NDOE_ENV);
 const App: React.FC = () => {
-    return (
-        <div>
-            this is a test hhhhh this is something right this is another ts hhh
-        </div>
-    );
+    return <div>what hadd ped</div>;
 };
 
 export default App;

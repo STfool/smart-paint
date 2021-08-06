@@ -8,10 +8,11 @@
   "license": "MIT",
   "scripts": {
     "start": "babel main --extensions .ts --config-file ./main/.babelrc -d build --verbose && electron build/index.js",
-    "dev": "ts-node webpack/dev.config.ts",
-    "build": "ts-node webpack/prod.config.ts",
-    "dll": "ts-node webpack/dll.config.ts",
-    "package": "electron-builder"
+    "dev": "cross-env NODE_ENV=development ts-node webpack/dev.ts",
+    "prod": "cross-env NODE_ENV=production ts-node webpack/prod.ts",
+    "dll": "cross-env NODE_ENV=development ts-node webpack/dll.ts",
+    "package": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
@@ -26,6 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
     "electron": "^13.1.8",
     "electron-builder": "^22.11.7",
     "eslint": "^7.32.0",

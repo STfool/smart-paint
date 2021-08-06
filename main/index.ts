@@ -1,4 +1,5 @@
 import { app, BrowserWindow, globalShortcut, webContents } from "electron";
+import { getLoadUrl } from "./utils";
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -6,7 +7,7 @@ function createWindow() {
     height: 900,
   });
 
-  win.loadURL("http://localhost:8080");
+  win.loadURL(getLoadUrl());
 }
 
 app.whenReady().then(() => {

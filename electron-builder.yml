@@ -1,9 +1,11 @@
 appId: "com.electron.tangji"
 productName: "tangjitest"
 copyright: "Copyright © year tangji"
+electronDownload:
+  mirror: "https://npm.taobao.org/mirrors/electron/"
 directories:
   output: "package"
 mac:
   target: "dmg"
 files:
-  - build/**/*
+  - build{,/**/*}

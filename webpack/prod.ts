@@ -5,7 +5,7 @@ import * as path from "path";
 
 const prodOptions = merge(baseOptions, {
   mode: "production",
-  devtool: "none",
+  devtool: false,
   output: {
     path: path.resolve(__dirname, "../build"),
     filename: "[name].[chunkhash:8].js",
