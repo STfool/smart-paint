@@ -2,3 +2,4 @@ node_modules
 yarn-error*
 npm-error*
 package
+.DS_Store
