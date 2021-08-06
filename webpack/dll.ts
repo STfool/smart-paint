@@ -1,4 +1,4 @@
-import { webpack, Configuration, DllPlugin } from "webpack";
+import { webpack, Configuration, DllPlugin, DefinePlugin } from "webpack";
 import * as path from "path";
 
 const dllOptions: Configuration = {
@@ -12,6 +12,9 @@ const dllOptions: Configuration = {
     library: "vendor",
   },
   plugins: [
+    new DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+    }),
     new DllPlugin({
       context: __dirname,
       name: "vendor",

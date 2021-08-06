@@ -39,7 +39,7 @@
       ]
     },
     "../node_modules/react-dom/index.js": {
-      "id": 5,
+      "id": 4,
       "buildMeta": {
         "exportsType": "dynamic",
         "defaultObject": "redirect"
