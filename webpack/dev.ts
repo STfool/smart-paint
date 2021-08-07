@@ -44,7 +44,7 @@ async function run() {
     const compiler = dllRun();
 
     // occur after complier done
-    compiler.hooks.afterDone.tap("this", () => {
+    compiler.hooks.afterDone.tap("occur after complier done", () => {
       run();
     });
   }
