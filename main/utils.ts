@@ -1,9 +1,12 @@
 import * as url from "url";
 import * as path from "path";
+import config from "./config.json";
+
+process.env.NODE_ENV = config.env;
 
 export const getLoadUrl = (): string | never => {
   if (process.env.NODE_ENV === "development") {
-    return "https://localhost:8080";
+    return "http://localhost:8080";
   } else if (process.env.NODE_ENV === "production") {
     return url.format({
       pathname: path.join(__dirname, "index.html"),

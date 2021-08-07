@@ -4,6 +4,7 @@
     "target": "esnext",
     "module": "esnext",
     "outDir": "../build",
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "*": ["../node_modules/*"]
