@@ -1,5 +1,6 @@
 import { Configuration, DllReferencePlugin, DefinePlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import * as path from "path";
 
 const baseOptions: Configuration = {
@@ -15,6 +16,19 @@ const baseOptions: Configuration = {
       {
         test: /\.tsx?$/,
         loader: "babel-loader",
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+            },
+          },
+          "postcss-loader",
+        ],
       },
     ],
   },
@@ -41,6 +55,10 @@ const baseOptions: Configuration = {
 </html>
       `,
     }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    }) as any,
   ],
 };
 
