@@ -7,7 +7,7 @@
   "author": "Tangjj1996 <tangjj_1996@163.com>",
   "license": "MIT",
   "scripts": {
-    "start": "rollup -c main/rollup.config.js && electron build/index.js",
+    "start": "tsc -p main && electron .",
     "dev": "cross-env NODE_ENV=development ts-node webpack/dev.ts",
     "prod": "cross-env NODE_ENV=production ts-node webpack/prod.ts",
     "package": "rollup -c main/rollup.config.js && electron-builder",
@@ -28,7 +28,6 @@
     "@types/webpack-dev-server": "^3.11.5",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
-    "autoprefixer": "^10.3.1",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
@@ -42,8 +41,6 @@
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "prettier": "^2.3.2",
-    "rollup": "^2.56.0",
-    "rollup-plugin-typescript2": "^0.30.0",
     "tailwindcss": "^2.2.7",
     "ts-node": "^10.1.0",
     "tslib": "^2.3.0",
@@ -56,14 +53,5 @@
     "@babel/runtime-corejs3": "^7.14.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  },
-  "browserslist": {
-    "production": [
-      "> 1%",
-      "not dead"
-    ],
-    "development": [
-      "last 1 versions"
-    ]
   }
 }
