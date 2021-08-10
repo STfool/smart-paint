@@ -8,8 +8,8 @@ const App: React.FC = () => {
         const ctx = canvas.getContext("2d");
 
         ctx.beginPath();
-        ctx.moveTo(0, 100);
-        ctx.lineTo(100, 100);
+        ctx.moveTo(0, 100 * resolution);
+        ctx.lineTo(100 * resolution, 100 * resolution);
         ctx.closePath();
         ctx.stroke();
 
