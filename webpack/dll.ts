@@ -1,10 +1,4 @@
-import {
-  webpack,
-  Configuration,
-  DllPlugin,
-  DefinePlugin,
-  Compiler,
-} from "webpack";
+import { webpack, Configuration, DllPlugin, DefinePlugin, Compiler } from "webpack";
 import * as path from "path";
 
 const dllOptions: Configuration = {
