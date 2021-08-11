@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export const useDebounce = (fn: () => void, ms = 30, deps = []): (() => void)[] => {
   const timer = useRef<NodeJS.Timeout | null>();
@@ -20,4 +20,20 @@ export const useDebounce = (fn: () => void, ms = 30, deps = []): (() => void)[] 
   return [cancel];
 };
 
-export const useThrottle = () => {};
+export const useThrottle = (fn: () => void, ms = 30, deps: unknown[] = []): (() => void)[] => {
+  const previous = useRef(0);
+  const [time, setTime] = useState(ms);
+  useEffect(() => {
+    const now = Date.now();
+    if (now - previous.current > time) {
+      fn();
+      previous.current = Date.now();
+    }
+  }, deps);
+
+  const cancel = () => {
+    setTime(0);
+  };
+
+  return [cancel];
+};
