@@ -28,8 +28,6 @@ const useBoard = (): number[] => {
     };
   }, []);
 
-  console.log("this is width::%d, this is height::%d", rect.width, rect.height);
-
   return [rect.width, rect.height];
 };
 
