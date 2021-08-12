@@ -1,34 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import useBoard from "./hooks/useBoard";
 
 const App: React.FC = () => {
-    const [resolution] = React.useState(window.devicePixelRatio);
-
-    React.useEffect(() => {
-        const canvas = document.getElementById("canvas") as HTMLCanvasElement;
-        const ctx = canvas.getContext("2d");
-
-        ctx.beginPath();
-        ctx.moveTo(0, 100 * resolution);
-        ctx.lineTo(100 * resolution, 100 * resolution);
-        ctx.closePath();
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(20, 30);
-        ctx.lineTo(20, 100);
-        ctx.closePath();
-        ctx.stroke();
-    }, []);
+    const [resolution] = useState(window.devicePixelRatio);
+    const [width, height] = useBoard();
     return (
         <>
             <canvas
-                id="canvas"
-                width={window.innerWidth * resolution}
-                height={window.innerHeight * resolution}
-                style={{
-                    width: window.innerWidth + "px",
-                    height: window.innerHeight + "px",
-                }}
+                width={width * resolution}
+                height={height * resolution}
+                style={{ width: width + "px", height: height + "px" }}
             ></canvas>
         </>
     );
