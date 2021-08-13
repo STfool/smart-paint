@@ -7,6 +7,9 @@ const baseOptions: Configuration = {
   entry: path.resolve(__dirname, "../page/index.tsx"),
   resolve: {
     extensions: [".js", ".tsx", ".ts", ".d.ts"],
+    alias: {
+      "@utils": path.resolve(__dirname, "../page/utils"),
+    },
   },
   stats: {
     errorDetails: true,

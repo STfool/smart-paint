@@ -4,6 +4,10 @@
     "target": "esnext",
     "module": "esnext",
     "jsx": "react-jsx",
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@utils/*": ["utils/*"]
+    }
   }
 }

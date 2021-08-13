@@ -1,15 +1,5 @@
 import { useEffect, useState } from "react";
-
-const debounce = (fn: (...arges: unknown[]) => void, delay = 60) => {
-  let timer = null;
-  return function (...args: unknown[]) {
-    if (timer) clearTimeout(timer);
-
-    timer = setTimeout(() => {
-      fn.call(this, ...args);
-    }, delay);
-  };
-};
+import { debounce } from "@utils/throttle-debounce";
 
 const useBoard = (): number[] => {
   const [rect, setRect] = useState({ width: window.innerWidth, height: window.innerHeight });
